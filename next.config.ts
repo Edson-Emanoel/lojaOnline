@@ -4,16 +4,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
+        // ATENÇÃO: O wildcard '**' permite QUALQUER hostname.
+        // Use com extrema cautela devido aos riscos de segurança e custos.
+        hostname: '**',
       },
-      // NOVO DOMÍNIO ADICIONADO AQUI
-      {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-        port: '',
-        pathname: '/**', 
+       {
+        // É uma boa prática permitir http também, se necessário,
+        // mas https é sempre preferível.
+        protocol: 'http',
+        hostname: '**',
       },
     ],
   },
